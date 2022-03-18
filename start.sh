@@ -11,6 +11,6 @@ docker stack deploy -c stack-base-a.yml  servicea & process_id=$! wait $process_
 docker stack deploy -c stack-base-b.yml  serviceb & process_id=$! wait $process_id
 docker stack deploy -c stack-base-c.yml  servicec & process_id=$! wait $process_id
 docker stack deploy -c stack-base-key.yml  keycloak & process_id=$! wait $process_id
-docker stack deploy -c ./kong/stack-base-key.yml  kong & process_id=$! wait $process_id
+docker stack deploy -c ./kong/stack-base.yml  kong & process_id=$! wait $process_id
 
 

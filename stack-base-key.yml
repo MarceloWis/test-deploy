@@ -11,12 +11,12 @@ services:
   postgres:
     deploy:
       replicas: 1
-      resources:
-        limits:
-          cpus: "0.25"
-          memory: 128M
-      restart_policy:
-        condition: any
+      # resources:
+      #   limits:
+      #     cpus: "0.25"
+      #     memory: 128M
+      # restart_policy:
+      #   condition: any
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
@@ -35,13 +35,13 @@ services:
       - postgres
     deploy:
       replicas: 1
-      resources:
-        limits:
-          cpus: '1.50'
-          memory: 1024M
-        reservations:
-          cpus: '0.05'
-          memory: 128M
+      # resources:
+      #   limits:
+      #     cpus: '1.50'
+      #     memory: 1024M
+      #   reservations:
+      #     cpus: '0.05'
+      #     memory: 128M
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
