@@ -1,0 +1,22 @@
+version: '3.8'
+
+networks: 
+  ap:
+    external: true
+
+services:
+  servicea:
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '1.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.05'
+          memory: 128M
+    image: marcelowis/serviceb:latest
+    ports:
+      - 8045:8045
+    networks:
+      - ap
