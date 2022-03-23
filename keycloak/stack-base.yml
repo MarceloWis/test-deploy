@@ -11,12 +11,12 @@ services:
   postgres:
     deploy:
       replicas: 1
-      # resources:
-      #   limits:
-      #     cpus: "0.25"
-      #     memory: 128M
-      # restart_policy:
-      #   condition: any
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128M
+      restart_policy:
+        condition: any
     environment:
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
@@ -35,13 +35,13 @@ services:
       - postgres
     deploy:
       replicas: 1
-      # resources:
-      #   limits:
-      #     cpus: '1.50'
-      #     memory: 1024M
-      #   reservations:
-      #     cpus: '0.05'
-      #     memory: 128M
+      resources:
+        limits:
+          cpus: '1.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.05'
+          memory: 128M
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
@@ -52,6 +52,7 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
     image: koolwithk/keycloak-arm:16.0.0
+      # image: jboss/keycloak:16.0.0
       # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
       #JDBC_PARAMS: "ssl=true"
     ports:

@@ -11,5 +11,4 @@ RUN set -uex; \
 ADD ./serviceb /app
 
 USER nobody
-EXPOSE 8045
 CMD ["/usr/local/bin/node", "/app/index.js"]

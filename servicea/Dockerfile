@@ -11,5 +11,4 @@ RUN set -uex; \
 ADD ./servicea /app
 
 USER nobody
-EXPOSE 6000
 CMD ["/usr/local/bin/node", "/app/index.js"]

@@ -1,26 +1,31 @@
-var express = require('express');
-var app = express();
+// checklist
+const express = require('express')
 
-app.use(express.static('public'));
+const app = express()
 
-app.get('/', function (req, res) {
-    res.send('Welcome Service A');
-});
+app.use(express.json())
 
-app.get('/tcs', function (req, res) {
-    res.send('Service A');
-});
+app.get('/homeowner/:id', (req, res) => {
+    return res.json({ HomeOwner: req.params.id, from: 'checklist' })
+})
 
-app.get('/wizard', function (req, res) {
-  res.send('Service A HI wizard');
-});
+app.get('/homeowner/GetSingleWithProperty', (req, res) => {
+    return res.json({ GetSingleWithProperty: 1, from: 'checklist' })
+})
 
-// Handle 404 - Keep this as a last route
-app.use(function(req, res, next) {
-    res.status(404);
-    res.send('404: File Not Found');
-});
+app.get('/homeowner/ExistsByFullUser', (req, res) => {
+    return res.json({ ExistsByFullUser: 1, from: 'checklist' })
+})
 
-app.listen(6000, function () {
-    console.log('Example app listening on port 8080!');
-});
+app.get('/homeowner/UserExists', (req, res) => {
+    return res.json({ UserExists: 1, from: 'checklist' })
+})
+
+app.get('/homeowner/UpdateUserEmail', (req, res) => {
+    return res.json({ UpdateUserEmail: 1, from: 'checklist' })
+})
+
+
+app.listen(4000, () => {
+    console.log("App running on port 4000")
+})

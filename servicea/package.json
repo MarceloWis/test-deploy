@@ -1,21 +1,15 @@
 {
-  "name": "node-docker-demo-app",
+  "name": "servicea",
   "version": "1.0.0",
-  "description": "A node app in docker with various supervisors",
-  "repository": "https://github.com/deployable/node-docker-demo-app.git",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "curl -s http://localhost:8080"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "test",
-    "node",
-    "app"
-  ],
-  "author": "Matt Hoyle",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3",
-    "lodash": "~4.17.3"
+    "express": "^4.17.3"
   }
 }
